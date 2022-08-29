@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
 import { User } from '../models/common'
 
+// This component shows the user info on Main Page
 const UserCard: React.FC<{ user: User }>  = ({ user }) =>{
   return (
     <div>

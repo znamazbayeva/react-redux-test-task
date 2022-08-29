@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import { useSelector } from "../hooks/useTypedSelector";
 import { User } from "../models/common";
 
-const NotFound: React.FC = () =>{
+//User Page shows the User info in table
+
+const UserPage: React.FC = () =>{
   const [currentUser, setCurrentUser] = useState<User>();
   const { data } = useSelector((state) => state.users);
   const { userId } = useSelector((state) => state.auth);
@@ -34,4 +36,4 @@ const NotFound: React.FC = () =>{
   )
 }
 
-export default NotFound;
+export default UserPage;

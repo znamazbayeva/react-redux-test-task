@@ -4,23 +4,30 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import Switch from '@mui/material/Switch';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormGroup from '@mui/material/FormGroup';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import Button from '@mui/material/Button';
-import { useSelector, useAppSelector } from "../hooks/useTypedSelector";
-import { Navigate, Link, useNavigate } from 'react-router-dom';
+import { useSelector } from "../hooks/useTypedSelector";
+import { Link, useNavigate } from 'react-router-dom';
 import { useActions } from "../hooks/useActions";
+
+// This is a header component
+// It has two main components:
+
+//  If the user is logged in:
+// 1. It shows the icon with the bar, which contains three main pages that client can go to
+// Home Page, Login Page, Personal Page
+// 2. Logout Button which redirects to Register Page
+
+// If the user is not logged in:
+// It has only the register button
 
 const Header: React.FC = () => {
   const navigate= useNavigate();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const { logout } = useActions();
-  const { isAuthenticated, userId, token } = useSelector((state) => state.auth);
+  const { token } = useSelector((state) => state.auth);
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);

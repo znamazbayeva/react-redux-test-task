@@ -13,6 +13,7 @@ import { Link, Navigate } from "react-router-dom";
 import { useActions } from "../hooks/useActions";
 import { useSelector } from "../hooks/useTypedSelector";
 
+// Register page contains registration form and accessible only to non-authorized clients
 
 const theme = createTheme();
 

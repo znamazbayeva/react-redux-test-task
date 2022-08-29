@@ -3,13 +3,13 @@ import { useActions } from "../hooks/useActions";
 import { useSelector } from "../hooks/useTypedSelector";
 import UserCard from "../components/UserCard";
 import Header from "../components/Header";
-import { useDispatch } from "react-redux";
 
+// Home Page shows the list of users 
 
 const Home: React.FC = () => {
   const { getUsersList } = useActions();
   const { loading, data, error } = useSelector((state) => state.users);
-  const { isAuthenticated, userId, token } = useSelector((state) => state.auth);
+  const { token } = useSelector((state) => state.auth);
 
   useEffect(() => {
     if(!data.length) {
