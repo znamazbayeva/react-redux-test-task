@@ -4,7 +4,7 @@ const NotFound: React.FC = () =>{
   return (
     <div>
       <Header />
-      This page is not found 404
+      this page does not exist
     </div>
   )
 }
